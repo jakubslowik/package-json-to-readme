@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 'use strict'
 
-var hogan = require('hogan.js')
-var fs = require('fs')
-var path = require('path')
-var util = require('util')
-var argv = require('yargs')
+const hogan = require('hogan.js');
+const fs = require('fs');
+const path = require('path');
+const util = require('util');
+const argv = require('yargs')
   .usage('Usage: readme path/to/package.json')
   .check(function (argv) {
     if (!argv._.length) throw new Error('A path to a valid package.json is required')
@@ -23,17 +23,18 @@ var argv = require('yargs')
   .help('help')
   .alias('h', 'help')
   .argv
-var gh = require('github-url-to-object')
-var childProcess = require('child_process')
-var stripAnsi = require('strip-ansi')
+const gh = require('github-url-to-object');
+const childProcess = require('child_process');
+const stripAnsi = require('strip-ansi');
 
-var pkgPath = path.resolve(process.cwd(), argv._[0])
+const pkgPath = path.resolve(process.cwd(), argv._[0]);
 
+let pkg = null;
 try {
-  var pkg = require(pkgPath)
+  pkg = require(pkgPath);
 } catch (e) {
-  console.error('Invalid JSON file: %s', pkgPath)
-  process.exit()
+  console.error('Invalid JSON file: %s', pkgPath);
+  process.exit();
 }
 
 pkg.private = pkg.private || pkg.license === 'private' || false

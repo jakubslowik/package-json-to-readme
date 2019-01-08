@@ -1,11 +1,10 @@
 {
   "name": "package-json-to-readme",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "Generate a README.md from package.json contents",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && standard",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test": "mocha"
   },
   "repository": "https://github.com/zeke/package-json-to-readme",
   "keywords": [
@@ -15,7 +14,7 @@
     "markdown",
     "documentation"
   ],
-  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com/)",
+  "author": "Jakub Słowik",
   "license": "MIT",
   "dependencies": {
     "github-url-to-object": "^1.6.0",
@@ -27,19 +26,8 @@
     "package-json-to-readme": "index.js",
     "readme": "index.js"
   },
-  "preferGlobal": true,
   "devDependencies": {
     "mocha": "^2.1.0",
-    "nixt": "^0.3.0",
-    "standard": "^8.6.0",
-    "semantic-release": "^8.2.0"
-  },
-  "standard": {
-    "env": {
-      "mocha": true
-    },
-    "ignore": [
-      "test/fixtures"
-    ]
+    "nixt": "^0.3.0"
   }
 }
