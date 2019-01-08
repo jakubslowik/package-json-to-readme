@@ -1,30 +1,21 @@
 {
-  "name": "package-json-to-readme",
+  "name": "package-json-readme-inject",
   "version": "0.0.0",
-  "description": "Generate a README.md from package.json contents",
+  "description": "Inject package.json contents into README.md file",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "stdout": "node index.js package.json",
+    "pipe": "node index.js package.json > README-test.md"
   },
-  "repository": "https://github.com/zeke/package-json-to-readme",
-  "keywords": [
-    "package.json",
-    "readme",
-    "generator",
-    "markdown",
-    "documentation"
-  ],
+  "repository": "https://github.com/jakubslowik/package-json-to-readme",
   "author": "Jakub Słowik",
   "license": "MIT",
   "dependencies": {
-    "github-url-to-object": "^1.6.0",
     "hogan.js": "^2.0.0",
-    "strip-ansi": "^0.2.2",
     "yargs": "^3.0.4"
   },
   "bin": {
-    "package-json-to-readme": "index.js",
-    "readme": "index.js"
+    "rdm": "node index.js package.json"
   },
   "devDependencies": {
     "mocha": "^2.1.0",
